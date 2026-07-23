@@ -28,10 +28,10 @@ return {
 
   shortcuts = {
     focusApp = {
-      modifier = { "ctrl", "alt", "cmd" },
+      modifier = { "alt" },
     },
     action = {
-      modifier = { "ctrl", "alt", "cmd" },
+      modifier = { "alt" },
       toggleMaximize = "return",
       inspectWindow = ",",
       reloadConfig = ".",

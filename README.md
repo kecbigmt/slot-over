@@ -79,10 +79,10 @@ Shortcuts are grouped by operation. Each group defines its own modifier:
 ```lua
 shortcuts = {
   focusApp = {
-    modifier = { "ctrl", "alt", "cmd" },
+    modifier = { "alt" },
   },
   action = {
-    modifier = { "ctrl", "alt", "cmd" },
+    modifier = { "alt" },
     toggleMaximize = "return",
     inspectWindow = ",",
     reloadConfig = ".",
@@ -108,14 +108,14 @@ shortcuts = {
 | Focus left slot | `Option + H` |
 | Focus next window in current slot | `Option + J` |
 | Focus right slot | `Option + L` |
-| Focus configured app | `Ctrl + Option + Command + key` |
+| Focus configured app | `Option + key` |
 | Move window left | `Option + Shift + H` |
 | Move window right | `Option + Shift + L` |
-| Maximize / restore | `Ctrl + Option + Command + Enter` |
-| Inspect current window | `Ctrl + Option + Command + ,` |
-| Reload config | `Ctrl + Option + Command + .` |
+| Maximize / restore | `Option + Enter` |
+| Inspect current window | `Option + ,` |
+| Reload config | `Option + .` |
 
-For example, the default config maps VS Code to `e`, so `Ctrl + Option + Command + E` focuses a matching VS Code window.
+For example, the default config maps VS Code to `e`, so `Option + E` focuses a matching VS Code window.
 
 Reloading the config is also the explicit reset-layout action. When `behavior.placeOnReload` is enabled, known app windows are moved back to their configured slots only on reload.
 
@@ -217,7 +217,7 @@ If the screen is narrower than the minimum width, the slot is clamped to the scr
 Focus a window and press:
 
 ```text
-Ctrl + Option + Command + ,
+Option + ,
 ```
 
 The manager shows the window title, app name, and bundle ID.
