@@ -2,6 +2,8 @@
 
 A lightweight Hammerspoon-based window manager for macOS overlapping slot layouts.
 
+https://github.com/user-attachments/assets/faa5257c-f891-4d26-b5f8-de330145e779
+
 It is designed mainly for displays that are wide enough to benefit from side areas, but not wide enough to comfortably split into three equal tiles, such as 21:9 ultrawide monitors. The screen is divided into three spatial slots: `left`, `center`, and `right`. Unlike a tiling window manager, both the slot regions themselves and the windows assigned to each slot are allowed to overlap.
 
 This lets you keep the focused app large while still using the side areas for chat, music, notes, docs, browser references, or other supporting windows. Side windows can remain visible enough to monitor notifications or keep reference material in view without forcing every app into a narrow non-overlapping tile.
