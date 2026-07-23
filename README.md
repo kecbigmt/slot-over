@@ -4,9 +4,11 @@ A lightweight Hammerspoon-based window manager for macOS overlapping slot layout
 
 https://github.com/user-attachments/assets/faa5257c-f891-4d26-b5f8-de330145e779
 
-It is designed mainly for displays that are wide enough to benefit from side areas, but not wide enough to comfortably split into three equal tiles, such as 21:9 ultrawide monitors. The screen is divided into three spatial slots: `left`, `center`, and `right`. Unlike a tiling window manager, both the slot regions themselves and the windows assigned to each slot are allowed to overlap.
+SlotOver is designed mainly for displays that are wide enough to benefit from side areas, but not wide enough to comfortably split into three equal tiles, such as 21:9 ultrawide monitors.
 
-This lets you keep the focused app large while still using the side areas for chat, music, notes, docs, browser references, or other supporting windows. Side windows can remain visible enough to monitor notifications or keep reference material in view without forcing every app into a narrow non-overlapping tile.
+It organizes the screen into three spatial slots: `left`, `center`, and `right`, each with configurable minimum and maximum widths.
+
+This lets you keep the focused app large while still using the side areas for chat, music, notes, docs, browser references, or other supporting windows. 
 
 ## Features
 
@@ -15,7 +17,6 @@ This lets you keep the focused app large while still using the side areas for ch
 - App-based focus shortcuts for jumping directly to known windows
 - Relative focus and movement between slots
 - Cycling through overlapping windows in the same slot
-- Explicit reset-layout behavior on config reload
 
 ## Install
 
@@ -45,15 +46,7 @@ Create the Hammerspoon config directory if it does not exist:
 mkdir -p ~/.hammerspoon
 ```
 
-Copy SlotOver into it:
-
-```sh
-~/.hammerspoon/init.lua
-~/.hammerspoon/slotover.lua
-~/.hammerspoon/config.lua
-```
-
-If you are starting from this repository:
+Copy SlotOver into it from this repository:
 
 ```sh
 cp init.lua ~/.hammerspoon/init.lua
@@ -109,19 +102,20 @@ shortcuts = {
 }
 ```
 
-| Action | Shortcut |
+| Command | Shortcut |
 |---|---|
 | Focus previous window in current slot | `Option + K` |
 | Focus left slot | `Option + H` |
 | Focus next window in current slot | `Option + J` |
 | Focus right slot | `Option + L` |
+| Focus configured app | `Ctrl + Option + Command + key` |
 | Move window left | `Option + Shift + H` |
 | Move window right | `Option + Shift + L` |
-| Maximize / restore | `Action + Enter` |
-| Inspect current window | `Action + ,` |
-| Reload config | `Action + .` |
+| Maximize / restore | `Ctrl + Option + Command + Enter` |
+| Inspect current window | `Ctrl + Option + Command + ,` |
+| Reload config | `Ctrl + Option + Command + .` |
 
-`Focus App` and `Action` both mean `Ctrl + Option + Command` by default.
+For example, the default config maps VS Code to `e`, so `Ctrl + Option + Command + E` focuses a matching VS Code window.
 
 Reloading the config is also the explicit reset-layout action. When `behavior.placeOnReload` is enabled, known app windows are moved back to their configured slots only on reload.
 
@@ -138,7 +132,7 @@ Each app profile can define:
 }
 ```
 
-`titleSubstring` is optional and works for any app, not just browsers.
+Use `titleSubstring` to distinguish separate windows of the same app, such as different browser profiles, workspaces, or projects.
 
 If several app profiles share the same `key`, pressing that key repeatedly cycles through matching windows in the order they appear in `apps`.
 
@@ -223,7 +217,7 @@ If the screen is narrower than the minimum width, the slot is clamped to the scr
 Focus a window and press:
 
 ```text
-Action + ,
+Ctrl + Option + Command + ,
 ```
 
 The manager shows the window title, app name, and bundle ID.
