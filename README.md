@@ -2,7 +2,7 @@
 
 A lightweight Hammerspoon-based window manager for macOS overlapping slot layouts.
 
-https://github.com/user-attachments/assets/faa5257c-f891-4d26-b5f8-de330145e779
+https://github.com/user-attachments/assets/f8e7e61a-ef15-4f8b-8eef-11e475d2a018
 
 SlotOver is designed mainly for displays that are wide enough to benefit from side areas, but not wide enough to comfortably split into three equal tiles, such as 21:9 ultrawide monitors.
 
